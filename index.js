@@ -1,10 +1,17 @@
 // api/index.js
+import cors from 'cors'
+import dotenv from 'dotenv'
 import express from 'express';
 import multer from 'multer';
 import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 
+dotenv.config()
+
 const app = express();
+app.use(cors({
+  origin: "*"
+}))
 const upload = multer({ storage: multer.memoryStorage() });
 
 // Inicializações
