@@ -40,8 +40,8 @@ app.post('/api/upload', upload.single('curriculo'), async (req, res) => {
     // Como o arquivo já está em 'file.buffer' (graças ao Multer), 
     // não precisamos nem baixar do Supabase agora! Usamos o que já temos na memória.
     await resend.emails.send({
-      from: 'Seu App <onboarding@resend.dev>', // Ou seu domínio verificado
-      to: emailRecrutador || 'destinatario@teste.com',
+      from: 'onboarding@resend.dev', // Ou seu domínio verificado
+      to: emailRecrutador || 'jbastos.im@gmail.com',
       subject: `Novo Currículo: ${file.originalname}`,
       html: `
         <p>Olá, o candidato <strong>${nome} ${sobrenome}</strong> enviou um currículo.</p>
